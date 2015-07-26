@@ -6,14 +6,22 @@ Source of the data is: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfi
 
 The script performs the following:
 
-1) Merges the training and test data sets to create a combined data set for X, y and the test subjects.
-
-2) Read features.txt, find the columns for mean and standard deviation, and extract the corresponding measurements. All measurements appear to be floating point numbers in the range (-1, 1).
-
-3) Name and clean the column labels for X obtained from features.txt by removing '()' and change the names to lowercase.
-
-4) Reads activity_labels.txt and applies descriptive activity names to name the activities in the data set, namely walking, walkingupstairs, walkingdownstairs, sitting, standing and laying. Label y column as 'activity'.
-
-5) Name subject column as 'subject'.
-
-6) Creates a second, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as tidy_data_with_averages.txt.
+1. Merges the training and test data sets to create a combined data set for X, y and the test subjects.
+2. Read features.txt, find the columns for mean and standard deviation, and extract the corresponding measurements. All measurements appear to be floating point numbers in the range (-1, 1).
+3. Name and clean the column labels for X obtained from features.txt by removing '()' and change the names to lowercase. The first column contains the subject IDs. The second column contains the activity names and the remaining 66 columns contain the measurements. The cleaned features names for the measurements are similar to the following:
+    * tbodyacc-mean-x 
+    * tbodyacc-mean-y 
+    * tbodyacc-mean-z 
+    * tbodyacc-std-x 
+    * tbodyacc-std-y 
+    * tbodyacc-std-z 
+4. Reads activity_labels.txt and applies descriptive activity names to name the activities in the data set, namely:
+    * walking
+    * walkingupstairs
+    * walkingdownstairs
+    * sitting
+    * standing
+    * laying.
+5. Label y column as 'activity'.
+6. Name subject column as 'subject'.
+7. Creates a second, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as tidy_data_with_averages.txt.
